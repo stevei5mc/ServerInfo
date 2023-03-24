@@ -20,9 +20,11 @@ public class RsNpcXVariable extends BaseVariable {
             if (info.onLine()) {
                 s = s.replace("{ServerInfoPlayer@" + info.getCallback() + "}", info.getPlayer() + "")
                         .replace("{ServerInfoMaxPlayer@" + info.getCallback() + "}", info.getMaxPlayer() + "");
+                        .replace("{ServerInfoOnlinestate@" + info.getCallback() + "}", info.getPlayer() \ info.getMaxPlayer() + "");
             }else {
                 s = s.replace("{ServerInfoPlayer@" + info.getCallback() + "}", "服务器离线")
                         .replace("{ServerInfoMaxPlayer@" + info.getCallback() + "}", "服务器离线");
+                        .replace("{ServerInfoOnlinestate@" + info.getCallback() + "}", "服务器离线");
             }
         }
         return s.replace("{ServerInfoPlayer}", ServerInfoMainClass.getInstance().getAllPlayerSize()+"");
@@ -36,9 +38,11 @@ public class RsNpcXVariable extends BaseVariable {
                 if (info.onLine()) {
                     this.addVariable("{ServerInfoPlayer@" + info.getCallback() + "}", info.getPlayer() + "");
                     this.addVariable("{ServerInfoMaxPlayer@" + info.getCallback() + "}", info.getMaxPlayer() + "");
+                    this.addVariable("{ServerInfoOnlinestate@" + info.getCallback() + "}", info.getPlayer() \ info.getMaxPlayer() + "");
                 }else {
                     this.addVariable("{ServerInfoPlayer@" + info.getCallback() + "}", "服务器离线");
                     this.addVariable("{ServerInfoMaxPlayer@" + info.getCallback() + "}", "服务器离线");
+                    this.addVariable("{ServerInfoOnlinestate@" + info.getCallback() + "}", "服务器离线");
                 }
             }
             this.addVariable("{ServerInfoPlayer}", ServerInfoMainClass.getInstance().getAllPlayerSize()+"");
